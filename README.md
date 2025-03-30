@@ -9,7 +9,6 @@ StockPulse is a Flask-based web application that predicts stock prices and perfo
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Project Structure](#project-structure)
 - [Future Work](#future-work)
 - [Contributing](#contributing)
 - [License](#license)
