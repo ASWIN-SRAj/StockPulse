@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        h1 { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Error</h1>
+    <p>{{ message }}</p>
+    <a href="{{ url_for('index') }}">Go back</a>
+</body>
+</html>
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 20px auto; }
+        .error { color: #e74c3c; background: #fadbd8; padding: 15px; border-radius: 5px; }
+        .back-link { display: block; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h2>We encountered an error</h2>
+    
+    <div class="error">
+        {{ message }}
+    </div>
+    
+    <a href="/" class="back-link">← Go back to predictor</a>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Error - Stock Predictor</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .error-container {
+            background: #FFF6F6;
+            border-left: 4px solid #FF5252;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #FF5252;
+            margin-top: 0;
+        }
+        .debug-info {
+            background: #f5f5f5;
+            padding: 10px;
+            font-family: monospace;
+            font-size: 0.9em;
+            margin-top: 20px;
+            display: none; /* Visible only in debug mode */
+        }
+        .button {
+            background: #4285F4;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h1>We Encountered an Error</h1>
+        <p>{{ message }}</p>
+        
+        {% if stock %}
+        <p>Stock: <strong>{{ stock }}</strong></p>
+        {% endif %}
+    </div>
+
+    <a href="/" class="button">← Return to Predictor</a>
+
+    {% if config.DEBUG %}
+    <div class="debug-info">
+        <h3>Debug Information:</h3>
+        <p>Stock: {{ stock }}</p>
+        <p>Latest Price: {{ latest_price }}</p>
+        <p>Predictions: {{ predictions }}</p>
+    </div>
+    {% endif %}
+</body>
+</html> -->

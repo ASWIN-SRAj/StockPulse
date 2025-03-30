@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result - Day 4</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+          href="https://fonts.googleapis.com/css2?family=poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet"
+        />
+        <link
+           href="https://fonts.googleapis.com/css2?family=Roboto+Slab:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+           rel="stylesheet"
+        />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>PREDICTION PAGE</h1>
+    <div class="container">
+        <h1>Stock Prediction for {{ stock }}</h1>
+        <p><strong>Predicted Price (Day 4):</strong> ₹{{ pred }}</p>
+
+        <div class="btn-container">
+            <a href="/result/3" class="btn">Previous Prediction</a>
+            <a href="/result/5" class="btn">Next Prediction</a>
+        </div>
+        
+    </div>
+    <div style="height: 40px;"></div>
+
+
+    <!-- ✅ CHART BELOW PREDICTION CARD -->
+    <div class="chart-container">
+        <canvas id="predictionChart"></canvas>
+    </div>
+    <div style="height: 40px;"></div>
+
+    
+
+    <!-- 📌 CHART.JS SCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+
+    <script>
+        // Get predictions from Flask
+        const prices = JSON.parse('{{ session["predictions"] | tojson | safe }}');
+        const labels = ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5"];
+    
+        // Get chart context
+        const ctx = document.getElementById("predictionChart").getContext("2d");
+    
+        new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: "Pattern of Predicted Price (₹)",
+                    data: prices,
+                    borderColor: "rgba(75, 192, 192, 1)",
+                    backgroundColor: "rgba(75, 192, 192, 0.2)",
+                    borderWidth: 2,
+                    fill: true,
+                    pointRadius: 4,  // ✅ Adjusts point size
+                    pointHoverRadius: 6  // ✅ Increases point size on hover
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,  // ✅ Allows custom sizing
+                scales: {
+                    y: {
+                        beginAtZero: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color : "black",
+                            font: {
+                                family: "Roboto Slab",
+                                size: 24,// ✅ Adjust legend text size
+                                weight : "bold",
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockPulse-Tools</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        background-color: rgba(232,232,232,1);
+        box-sizing: border-box;
+        min-height: 100vh;
+        width: 100%;
+    }
+    .head-box {
+        width: 100%;
+        height: 45px;
+        background: radial-gradient(rgba(191,15,253,0.84),rgba(161,28,249,0.86),rgba(74,66,236,0.87));
+    }
+    .header {
+        width: 100%;
+        height: 96px;
+        background-color: white;
+        font-family: 'Roboto Slab';
+        display: flex;
+        gap: 180px;
+        align-items: center;
+    }
+    .logo {
+        width: 357px;
+        height: 88px;
+        margin-left: 100px;
+    }
+    .head-con {
+        font-size: 40px;
+        font-weight: bold;
+        display: flex;
+        gap: 300px;
+    }
+    .view {
+        font-family: 'Roboto Slab' ;
+        font-weight: bold;
+        font-size: 30px;
+        margin-left: 170px;
+        padding: 40px 0;
+    }
+    .box1 {
+        margin: 80px 80px;
+        width: 50%;
+        height: 100%;
+        background-color: white;
+        padding: 40px 80px;
+        border-radius: 79px;
+        box-shadow: 9px 17px 14.9px  rgba(0,0,0,0.15);
+    }
+    .container {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content:center ;
+        align-items: center;
+    }
+    .spans {
+        font-family:'Roboto Slab' ;
+        font-weight: bold;
+        font-size: 30px;
+        background-image: linear-gradient(to bottom ,rgba(127,39,255,1),rgba(122,28,172,1));
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+    li {
+        font-family: 'poppins';
+        font-size: 25px;
+        padding: 10px;
+    }
+    .logo1 {
+        width: 226px;
+        height: 56px;
+        margin-left: 90px;
+    
+    }
+    .foot-con {
+        padding: 0;
+        width: 60%;
+        font-family: 'poppins';
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .int {
+        margin-left: 100px;
+    
+    }
+    
+    /* .footer {
+        width: 100%;
+        height: 50px;
+        background-color: rgba(127, 39, 255, 1);
+    } */
+    svg {
+        display: block;
+        /* filter: blur(10px); */
+        margin-top: -200px;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    a:hover {
+        cursor: default;
+        color: rgb(187, 0, 250);
+    }
+</style>
+<body>
+    <div class="head-box">
+
+    </div>
+    <div class="header">
+        <img class="logo" src="{{ url_for('static', filename='images/logo.png') }}" alt="logo">
+        <div class="head-con">
+            <a href="{{ url_for('index') }}"><span>HOME</span></a>
+            <a href="{{ url_for('overview') }}"><span>OVER VIEW</span></a>
+        </div>
+    </div>
+    <div class="view">
+        <span>TOOLS - USED</span>
+    </div>
+    <div class="container">
+        <div class="box1">
+            <span class="spans">Data Sources and Acquisition</span>
+            <li>Yahoo Finance API (yfinance): Reliable access to historical stock price data.</li>
+            <li>Advanced web scraping tools for collecting real-time market news for sentiment analysis.</li>
+        </div>
+        <div class="box1">
+            <span class="spans">Model Architecture</span>
+            <li>Deep Learning Models like LSTM networks with dual-layer architecture.</li>
+            <li>Captures long-term dependencies for time-series forecasting, enhancing predictive performance.</li>
+        </div>
+        <div class="box1">
+            <span class="spans">Sentiment Analysis Engine</span>
+            <li>Integrated TextBlob library for precise headline polarity scoring.</li>
+            <li>Converts emotions into numerical metrics for enhanced trend evaluation</li>
+        </div>
+        <div class="box1">
+            <span class="spans">Programming and Libraries</span>
+            <li>Python: Backbone of all coding processes.</li>
+            <li>TensorFlow/Keras: Implements and fine-tunes the LSTM predictive models.</li>
+            <li>NumPy & Pandas: Ensures smooth and efficient data preprocessing.</li>
+            <li>Matplotlib & Seaborn: Generates interactive visualizations to present insights effectively.</li>
+        </div>
+        <div class="box1">
+            <span class="spans">Interactive Features</span>
+            <li>Graphical representations of stock trends from LSTM-based predictions.</li>
+            <li>Sentiment tables to showcase key market feelings tied to news headlines.</li>
+            <li>A searchable homepage form allows users to dive directly into their preferred company’s predictions and analysis.</li>
+        </div>
+    </div>
+    <div class="foot-con">
+        <img class="logo1" src="{{ url_for('static', filename='images/logo.png') }}" alt="logo">
+        <div class="foot">
+            <p class="int">Integrating LSTM-Based Stock Price Prediction with Real-Time Sentiment Analysis for Enhanced Forecasting</p>
+        </div>
+    </div>
+    <div class="footer">
+        <svg width="1520" height="259" viewBox="0 0 1520 259" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1520 259H0V200.387C845.454 311.401 1365.61 113.052 1520 0V259Z" fill="#B387F4"/>
+            </svg>
+            
+            
+            
+            
+
+    </div>
+    
+</body>
+</html>

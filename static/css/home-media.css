@@ -1,0 +1,292 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+.head{
+    display: flex;
+    top: 0;
+
+}
+/* .headings{
+    display: flex;
+    gap: 250px;
+    font-family: 'Roboto Slab';
+    font-weight: bold;
+    font-size: 40px;
+    justify-content: center;
+}
+.home-col{
+    color: white;
+} */
+a{
+    font-family: 'Roboto Slab';
+    font-weight: bold;
+    font-size: 40px;
+    text-decoration: none;
+}
+.headings{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 140px;
+    margin-right: 50px;
+    transform: translateY(-250px);
+}
+.home-col{
+    color: white;
+}
+svg{
+    opacity: 0.7;
+}
+.over{
+    color: rgb(153, 0, 255);
+}
+.toolsused1{
+    color: rgb(153, 0, 255);
+}
+.mid {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-family: 'poppins';
+        font-weight:500;
+       }
+    .web {
+        width: 699px;
+        height: 173px;
+       }
+       .sicon {
+        width: 24px;
+        height: 24px;
+       }
+    .search-content {
+        display: flex;
+        opacity: 0.25;
+
+    }
+    .search-bar {
+        width: 100%;
+        max-width: 600px;
+        height: 86px;
+        background: rgba(188, 188, 188, 0.31);
+        display: flex;
+        align-items: center;
+        border-radius: 25px;
+        padding: 10px 20px;
+    }
+    .search-bar input{
+        background: transparent;
+        flex: 1;
+        border: 0;
+        outline: none;
+        padding: 24px 20px;
+        font-family: 'poppins';
+        font-size: 20px;
+    }
+    ::placeholder {
+        color: black;
+        opacity: 0.8;
+    }
+    .search-bar button img{
+        width: 24px;
+        height: 24px;
+    }
+    .search-bar button{
+        border: 0;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        background-color:  rgba(188, 188, 188, 0.31);
+        cursor: pointer;
+    }
+    :hover input{
+        color: red;
+    }
+    .footlogo {
+            width: 200px;
+            height: 50px;
+        }
+    #foottext {
+            width: 40%;
+            font-family: 'poppins';
+            font-weight: 500;
+            font-size: 15px;
+        }
+    .foot-con {
+            display: flex;
+            flex-direction: column;
+            margin-left: 50px;
+            margin-top: 150px;
+        }
+        .footer{
+            display: flex;
+            bottom: 0;
+        }
+
+@media(max-width:1245px){
+    .headings{
+        display: flex;
+        justify-content: space-between;
+        margin-left: 140px;
+        margin-right: 50px;
+        transform: translateY(-200px);
+    }
+    a {
+        font-family: 'Roboto Slab';
+        font-weight: bold;
+        font-size: 30px;
+        text-decoration: none;
+    }
+    .web {
+        width: 350px;
+        height: 86px;
+       }
+       .sicon {
+        width: 14px;
+        height: 14px;
+       }
+       .search-bar {
+        width: 100%;
+        max-width: 300px;
+        height: 43px;
+        background: rgba(188, 188, 188, 0.31);
+        display: flex;
+        align-items: center;
+        border-radius: 25px;
+        padding: 10px 20px;
+    }
+    .search-bar input{
+        background: transparent;
+        flex: 1;
+        border: 0;
+        outline: none;
+        padding: 24px 20px;
+        font-family: 'poppins';
+        font-size: 10px;
+    }
+    ::placeholder {
+        color: black;
+        opacity: 0.8;
+    }
+    .search-bar button img{
+        width: 12px;
+        height: 12px;
+    }
+    .search-bar button{
+        border: 0;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        background-color:  rgba(188, 188, 188, 0.31);
+        cursor: pointer;
+    }
+    :hover input{
+        color: red;
+    }
+    .footlogo {
+            width: 100px;
+            height: 25px;
+        }
+    #foottext {
+            width: 40%;
+            font-family: 'poppins';
+            font-weight: 500;
+            font-size: 10px;
+        }
+}
+@media(max-width:950px){
+    .headings{
+        display: flex;
+        justify-content: space-between;
+        margin-left: 140px;
+        margin-right: 50px;
+        transform: translateY(-100px);
+    }
+    a {
+        font-family: 'Roboto Slab';
+        font-weight: bold;
+        font-size: 20px;
+        text-decoration: none;
+    }
+    .home-col{
+        color: rgb(153, 0, 255);
+    }
+}
+@media(width <600px){
+    .headings{
+        display: flex;
+        gap: 10px;
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-top: 50px;
+        transform: translateY();
+    }
+    a {
+        font-family: 'Roboto Slab';
+        font-weight: bold;
+        font-size: 20px;
+        text-decoration: none;
+    }
+    .home-col{
+        color: rgb(153, 0, 255);
+    }
+    .web {
+        width: 175px;
+        height: 43px;
+       }
+       .sicon {
+        width: 10px;
+        height: 10px;
+       }
+       .search-bar {
+        width: 100%;
+        max-width: 300px;
+        height: 22px;
+        background: rgba(188, 188, 188, 0.31);
+        display: flex;
+        align-items: center;
+        border-radius: 25px;
+        padding: 10px 20px;
+    }
+    .search-bar input{
+        background: transparent;
+        flex: 1;
+        border: 0;
+        outline: none;
+        padding: 24px 20px;
+        font-family: 'poppins';
+        font-size: 10px;
+    }
+    ::placeholder {
+        color: black;
+        opacity: 0.8;
+    }
+    .search-bar button img{
+        width: 10px;
+        height: 10px;
+    }
+    .search-bar button{
+        border: 0;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        background-color:  rgba(188, 188, 188, 0.31);
+        cursor: pointer;
+    }
+    :hover input{
+        color: red;
+    }
+    .footlogo {
+            width: 100px;
+            height: 20px;
+        }
+    #foottext {
+            width: 40%;
+            font-family: 'poppins';
+            font-weight: 500;
+            font-size: 10px;
+        }
+}

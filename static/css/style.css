@@ -1,0 +1,189 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    /* background: linear-gradient(to right, #cab5e0, #2575fc); Purple-Pink, Blue Gradient */
+    background-color: rgba(232,232,232,1);
+    text-align: center;
+    padding: 20px;
+}
+
+/* Container for Result Card */
+.container {
+    max-width: 80%;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.815);
+    padding-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    
+}
+
+/* Headings */
+h1 {
+    font-family: 'Roboto Slab';
+    font-weight: 500;
+    font-size: 40px;
+    padding: 24px;
+    margin-bottom: 15px;
+}
+
+/* Prediction Text */
+p {
+    font-family: 'poppins';
+    font-size: 18px;
+    padding: 24px;
+    margin: 10px 0;
+}
+
+/* Button Container */
+.btn-container {
+    margin-top: 20px;
+}
+
+/* Button Styling */
+.btn {
+    text-decoration: none;
+    background: #ffffff;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 5px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #00ff6e;
+}
+/* Chart Container */
+/* .chart-container {
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    
+
+} */
+.chart-container {
+    max-width: 80%;
+    margin: 20px auto;  
+    padding: 10px;
+    padding-top: 40px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+canvas{
+    max-width: 100%;
+}
+
+#predictionChart {
+    width: 100% !important;  /* ✅ Full width of container */
+    height: 500px !important;  /* ✅ Fixed height for the chart */
+    max-height: 500px;  /* ✅ Prevents oversized charts */
+}
+#h11{
+    background-image: linear-gradient(to bottom ,rgba(127,39,255,1),rgba(122,28,172,1));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.news-headlines-section {
+    margin: 30px 0;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.news-headlines-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #4b4b4b;
+}
+
+.news-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.news-card {
+    background: linear-gradient(145deg, #f0f0f0, #d0d0d0);
+    border-radius: 8px;
+    padding: 15px;
+    width: 300px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.news-card p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.news-card:hover {
+    transform: scale(1.03);
+}
+.sentiment-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.sentiment-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 28%;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sentiment-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.sentiment-label {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.sentiment-bar {
+    background: #e0e0e0;
+    border-radius: 10px;
+    height: 12px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.sentiment-fill {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.5s; /* Smooth animation */
+}
+
+.positive-fill {
+    background-color: #4CAF50; /* Green */
+}
+
+.negative-fill {
+    background-color: #f44336; /* Red */
+}
+
+.neutral-fill {
+    background-color: #9E9E9E; /* Gray */
+}
+
+.sentiment-value {
+    font-size: 18px;
+    margin-top: 5px;
+    font-weight: bold;
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockPulse-Overview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link
+          href="https://fonts.googleapis.com/css2?family=poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet"
+        />
+        <link
+           href="https://fonts.googleapis.com/css2?family=Roboto+Slab:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+           rel="stylesheet"
+        />
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Overview-style.css') }}">
+
+        <link rel="stylesheet" href="C:\Users\aswinraj\Desktop\Stockpulse-web_page\static\Overview-style.css">
+</head>
+<style>
+    /*body{
+        margin: 0;
+        padding: 0;
+        background-color: rgba(232,232,232,1);
+        box-sizing: border-box;
+        min-height: 100vh;
+        width: 100%;
+    }
+    .head-box {
+        width: 100%;
+        height: 45px;
+        background: radial-gradient(rgba(191,15,253,0.84),rgba(161,28,249,0.86),rgba(74,66,236,0.87));
+    }
+    .header {
+        width: 100%;
+        height: 96px;
+        background-color: white;
+        font-family: 'Roboto Slab';
+        display: flex;
+        gap: 180px;
+        align-items: center;
+    }
+    .logo {
+        width: 357px;
+        height: 88px;
+        margin-left: 100px;
+    }
+    .head-con {
+        font-size: 40px;
+        font-weight: bold;
+        display: flex;
+        gap: 300px;
+    }
+    .view {
+        font-family: 'Roboto Slab' ;
+        font-weight: 500;
+        font-size: 30px;
+        margin-left: 170px;
+        padding: 40px 0;
+    }
+    .box1 {
+        margin: 80px 80px;
+        width: 50%;
+        height: 100%;
+        background-color: white;
+        padding: 40px 80px;
+        border-radius: 79px;
+        box-shadow: 9px 17px 14.9px  rgba(0,0,0,0.15);
+    }
+    .container {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content:center ;
+        align-items: center;
+    }
+    .spans {
+        font-family:'Roboto Slab' ;
+        font-weight: 500;
+        font-size: 30px;
+        background-image: linear-gradient(to bottom ,rgba(127,39,255,1),rgba(122,28,172,1));
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+    p {
+        font-family: 'poppins';
+        font-size: 25px;
+    }
+    .logo1 {
+        width: 226px;
+        height: 56px;
+        margin-left: 90px;
+
+    }
+    .foot-con {
+        padding: 0;
+        width: 60%;
+        font-family: 'poppins';
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .int {
+        margin-left: 100px;
+
+    }
+    
+    svg {
+        display: block;
+        /* filter: blur(10px); 
+        margin-top: -200px;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    a:hover {
+        cursor: default;
+        color: rgb(187, 0, 250);
+    }*/
+
+</style>
+<body>
+    <div class="head-box">
+
+    </div>
+    <div class="header">
+        <img class="logo" src="{{ url_for('static', filename='images/logo.png') }}" alt="logo">
+        <div class="head-con">
+            <a href="{{ url_for('index') }}"><span>HOME</span></a>
+            <a href="{{ url_for('tools_used') }}"><span>TOOLS USED</span></a>
+        </div>
+    </div>
+    <div class="view">
+        <span>OVERVIEW</span>
+    </div>
+    <div class="container">
+        <div class="box1">
+            <span class="spans">Predicting the Future with Precision</span>
+            <p>Explore how StockPulse employs cutting-edge machine learning techniques and market sentiment analysis to deliver accurate stock predictions.</p>
+        </div>
+        <div class="box1">
+            <span class="spans">Historical Stock Data Analysis</span>
+            <p>Using advanced Long Short-Term Memory (LSTM) networks, we process historical stock data to uncover trends and patterns over the last 60 days. This method enables precise predictions for future stock prices based on past behaviors.</p>
+        </div>
+        <div class="box1">
+            <span class="spans">Sentiment Analysis from News</span>
+            <p>The platform integrates sentiment analysis by evaluating live news headlines to gauge the market's mood. Utilizing TextBlob's polarity scores, it categorizes sentiment into positive, negative, or neutral, aligning emotions with market performance.</p>
+        </div>
+        <div class="box1">
+            <span class="spans">Combining Prediction and Sentiment</span>
+            <p>By integrating LSTM predictions with sentiment insights, StockPulse offers a holistic outlook, providing both data-driven trends and the psychological pulse of the market.</p>
+        </div>
+        <div class="box1">
+            <span class="spans">Your Benefit</span>
+            <p>Empower your decisions with a platform that merges quantitative forecasts and emotional insights, delivering actionable data to boost your investment strategy.</p>
+        </div>
+    </div>
+    <div class="foot-con">
+        <img class="logo1" src="{{ url_for('static', filename='images/logo.png') }}" alt="logo">
+        <div class="foot">
+            <p class="int">Integrating LSTM-Based Stock Price Prediction with Real-Time Sentiment Analysis for Enhanced Forecasting</p>
+        </div>
+    </div>
+    <div class="footer">
+        <svg width="1520" height="259" viewBox="0 0 1520 259" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1520 259H0V200.387C845.454 311.401 1365.61 113.052 1520 0V259Z" fill="#B387F4"/>
+            </svg>
+            
+            
+            
+            
+
+    </div>
+</body>
+</html>

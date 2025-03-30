@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+          href="https://fonts.googleapis.com/css2?family=poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet"
+        />
+        <link
+           href="https://fonts.googleapis.com/css2?family=Roboto+Slab:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+           rel="stylesheet"
+        />
+    <title>Prediction Result - Day {{ day }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1 id="h11">PREDICTION PAGE</h1>
+
+    <!-- 🔹 PREDICTION CARD -->
+    <div class="container">
+        <h1>Stock Prediction for {{ stock }}</h1>
+        <p><strong>Predicted Price (Day {{ day }}):</strong> ₹{{ pred }}</p>
+
+        <div class="btn-container">
+            <a href="/" class="btn">Go to Home</a>
+            <!-- <a href="/result/2" class="btn">Next Prediction</a> -->
+        </div>
+    </div>
+    <div style="height: 40px;"></div>
+
+
+    <!-- ✅ CHART BELOW PREDICTION CARD -->
+    <div class="chart-container">
+        <canvas id="predictionChart"></canvas>
+    </div>
+    <div style="height: 40px;"></div>
+
+    <div class="chart-container">
+        
+        <div class="news-headlines-section">
+            <h2>Latest News Headlines for {{ stock }}</h2>
+    
+            {% if news_headlines %}
+                <div class="news-cards">
+                    {% for headline in news_headlines %}
+                        <div class="news-card">
+                            <p>{{ headline }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p>No headlines found. Please try again.</p>
+            {% endif %}
+     </div>
+ 
+    </div>
+    <div style="height: 40px;"></div>
+
+    <div class="chart-container">
+        <!-- 🌟 Sentiment Scores Section -->
+    <!-- Sentiment Scores Section -->
+<h1>Sentiment Scores for {{ stock }}</h1>
+<div class="sentiment-container">
+
+    <div class="sentiment-card positive-card">
+        <div class="sentiment-icon">😊</div>
+        <div class="sentiment-label">Positive</div>
+        <div class="sentiment-bar">
+            <div class="sentiment-fill positive-fill" style="width: {{ sentiment_scores['Positive'] }}%;"></div>
+        </div>
+        <div class="sentiment-value">{{ sentiment_scores['Positive'] }}%</div>
+    </div>
+
+    <div class="sentiment-card negative-card">
+        <div class="sentiment-icon">😢</div>
+        <div class="sentiment-label">Negative</div>
+        <div class="sentiment-bar">
+            <div class="sentiment-fill negative-fill" style="width: {{ sentiment_scores['Negative'] }}%;"></div>
+        </div>
+        <div class="sentiment-value">{{ sentiment_scores['Negative'] }}%</div>
+    </div>
+
+    <div class="sentiment-card neutral-card">
+        <div class="sentiment-icon">😐</div>
+        <div class="sentiment-label">Neutral</div>
+        <div class="sentiment-bar">
+            <div class="sentiment-fill neutral-fill" style="width: {{ sentiment_scores['Neutral'] }}%;"></div>
+        </div>
+        <div class="sentiment-value">{{ sentiment_scores['Neutral'] }}%</div>
+    </div>
+
+</div>
+
+
+    </div>
+    <div style="height: 40px;"></div>
+    
+    <div class="chart-container">
+        <div class="sentiment-chart" style="padding: 20px; border: 2px solid #ffffff; border-radius: 10px; background-color: #ffffff;">
+            <h1>Sentiment Analysis on {{ stock }}</h1>
+            {% if sentiment_chart %}
+                <img src="data:image/png;base64,{{ sentiment_chart }}" alt="Sentiment Analysis Donut Chart" style="width: 500px; height: 500px; border-radius: 50%;">
+            {% else %}
+                <p>No sentiment analysis chart available.</p>
+            {% endif %}
+        </div>
+    </div>
+    <div style="height: 40px;"></div>
+
+    <!-- 📣 Recommendation Text Based on Sentiment Scores -->
+    <div class="chart-container">
+        <div class="recommendation" style="margin-top: 40px; text-align: center; font-family: 'Poppins', sans-serif;">
+            <h2 style="font-size: 28px; color: #4A4A4A;">Our Take on {{ stock }}!</h2>
+    
+            {% if sentiment_scores %}
+                {% set positive = sentiment_scores['Positive'] %}
+                {% set negative = sentiment_scores['Negative'] %}
+                {% set neutral = sentiment_scores['Neutral'] %}
+    
+                {% if positive > negative and positive > neutral %}
+                    <p style="font-size: 22px; color: green; margin-top: 20px;">📈 Bright Future Ahead! It's a great outlook Consider a "Buy for great returns!"" 🚀</p>
+        
+                {% elif negative > positive and negative > neutral %}
+                    <p style="font-size: 22px; color: red; margin-top: 20px;">📉 Caution Ahead! The sentiment looks bearish. It might be time to "Sell or Avoid". ⛔</p>
+        
+                {% elif neutral > positive and neutral > negative %}
+                    <p style="font-size: 22px; color: grey; margin-top: 20px;">🤔 Market in Limbo! The sentiment is neutral. It’s best to "Hold and Watch". 📌</p>
+        
+                {% elif positive == negative and positive > 0 %}
+                    <p style="font-size: 22px; color: orange; margin-top: 20px;">⚖️ Mixed Signals! Positive and Negative sentiments are balanced. Proceed with "Caution". 🧐</p>
+        
+                {% else %}
+                    <p style="font-size: 22px; color: grey; margin-top: 20px;">😕 Not enough data to provide a clear recommendation. Try again later.</p>
+                {% endif %}
+            {% else %}
+                <p>No sentiment scores available. Please try again.</p>
+            {% endif %}
+        </div>
+    </div>
+
+
+
+    <!-- 📌 CHART.JS SCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+
+    <script>
+        // Get predictions from Flask
+        const prices = JSON.parse('{{ session["predictions"] | tojson | safe }}');
+        const labels = ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5"];
+    
+        // Get chart context
+        const ctx = document.getElementById("predictionChart").getContext("2d");
+    
+        new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: "Pattern of Predicted Price (₹)",
+                    data: prices,
+                    borderColor: "rgba(75, 192, 192, 1)",
+                    backgroundColor: "rgba(75, 192, 192, 0.2)",
+                    borderWidth: 2,
+                    fill: true,
+                    pointRadius: 4,  // ✅ Adjusts point size
+                    pointHoverRadius: 6  // ✅ Increases point size on hover
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,  // ✅ Allows custom sizing
+                scales: {
+                    y: {
+                        beginAtZero: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color : "black",
+                            font: {
+                                family: "Roboto Slab",
+                                size: 24,// ✅ Adjust legend text size
+                                weight : "bold",
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+    
+</body>
+</html>

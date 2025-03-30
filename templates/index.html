@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link
+          href="https://fonts.googleapis.com/css2?family=poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet"
+        />
+        <link
+           href="https://fonts.googleapis.com/css2?family=Roboto+Slab:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+           rel="stylesheet"
+        />
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home-media.css') }}">
+
+        <link rel="stylesheet" href="C:\Users\aswinraj\Desktop\Stockpulse-web_page\static\home-media.css">
+</head>
+<style>
+    /* body{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .head{
+        display: flex;
+        top: 0;
+
+    }
+    
+    a{
+        font-family: 'Roboto Slab';
+        font-weight: bold;
+        font-size: 40px;
+        text-decoration: none;
+    }
+    .headings{
+        display: flex;
+        justify-content: space-between;
+        margin-left: 140px;
+        margin-right: 50px;
+        transform: translateY(-250px);
+    }
+    .home-col{
+        color: white;
+    }
+    svg{
+        opacity: 0.7;
+    }
+    .over{
+        color: rgb(153, 0, 255);
+    }
+    .toolsused1{
+        color: rgb(153, 0, 255);
+    }
+    .mid {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: 'poppins';
+            font-weight:500;
+           }
+        .web {
+            width: 699px;
+            height: 173px;
+           }
+           .sicon {
+            width: 24px;
+            height: 24px;
+           }
+        .search-content {
+            display: flex;
+            opacity: 0.25;
+
+        }
+        .search-bar {
+            width: 100%;
+            max-width: 600px;
+            height: 86px;
+            background: rgba(188, 188, 188, 0.31);
+            display: flex;
+            align-items: center;
+            border-radius: 25px;
+            padding: 10px 20px;
+        }
+        .search-bar input{
+            background: transparent;
+            flex: 1;
+            border: 0;
+            outline: none;
+            padding: 24px 20px;
+            font-family: 'poppins';
+            font-size: 20px;
+        }
+        ::placeholder {
+            color: black;
+            opacity: 0.1;
+        }
+        .search-bar button img{
+            width: 24px;
+            height: 24px;
+        }
+        .search-bar button{
+            border: 0;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            background-color:  rgba(188, 188, 188, 0.31);
+            cursor: pointer;
+        }
+        :hover input{
+            color: red;
+        }
+        .footlogo {
+                width: 200px;
+                height: 50px;
+            }
+        #foottext {
+                width: 40%;
+                font-family: 'poppins';
+                font-weight: 500;
+                font-size: 15px;
+            }
+        .foot-con {
+                display: flex;
+                flex-direction: column;
+                margin-left: 50px;
+                margin-top: 150px;
+            }
+            .footer{
+                display: flex;
+                bottom: 0;
+            } */
+
+</style>
+<body>
+    <div class="head">
+        <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><defs><linearGradient id="gradient" x1="100%" y1="50%" x2="0%" y2="50%"><stop offset="5%" stop-color="#ff00b7"></stop><stop offset="95%" stop-color="#be27ff"></stop></linearGradient></defs><path d="M0,320L60,288C120,256,240,192,360,165.3C480,139,600,149,720,154.7C840,160,960,160,1080,144C1200,128,1320,96,1380,80L1440,64L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-0" transform="rotate(-0 720 200)"></path></svg>    </div>
+    <div class="ab">
+        <div class="headings">
+            <div class="home">
+                <a href="{{ url_for('index') }}"><span class="home-col" >HOME</span></a>
+            </div>
+            <div class="overview">
+                <a href="{{ url_for('overview') }}"><span class="over">OVERVIEW</span></a>
+            </div>
+            <div class="toolsused">
+                <a href="{{ url_for('tools_used') }}"><span class="toolsused1">TOOLS USED</span></a>
+            </div>
+        </div>
+    </div>
+    <div class="mid">
+        <div class="Web_Name">
+            <img class="web" src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+        </div>
+        <div class="summary">
+           <p id="sum">Stock analysis and screening tool for investors</p>
+        </div>
+       <form action="/predict" method="POST" class="search-bar">
+        <input type="text" placeholder="Search Company" name="stock" required>
+        <button type="submit">
+            <img src="{{ url_for('static', filename='images/icons8.png') }}" alt="Logo">
+
+        </button>
+     </form>
+     
+    </div>
+    <div class="foot-con">
+        <img class="footlogo" src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+        <div>
+            <p id="foottext">Intergrating LSTM-Based Stock Price Prediction with Real-Time Sentiment Analysis for Enhanced Forecasting</p>
+        </div>
+    </div>
+    <div class="footer">
+        <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><defs><linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%"><stop offset="5%" stop-color="#ff00b7"></stop><stop offset="95%" stop-color="#8ed1fc"></stop></linearGradient></defs><path d="M 0,400 L 0,100 C 106.09569377990428,118.62200956937798 212.19138755980856,137.24401913875596 321,142 C 429.80861244019144,146.75598086124404 541.33014354067,137.64593301435406 624,113 C 706.66985645933,88.35406698564593 760.4880382775119,48.17224880382775 847,52 C 933.5119617224881,55.82775119617225 1052.7177033492824,103.66507177033492 1157,119 C 1261.2822966507176,134.33492822966508 1350.6411483253587,117.16746411483254 1440,100 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="0.53" class="transition-all duration-300 ease-in-out delay-150 path-0"></path><defs><linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%"><stop offset="5%" stop-color="#ff00b7"></stop><stop offset="95%" stop-color="#8ed1fc"></stop></linearGradient></defs><path d="M 0,400 L 0,233 C 78.3732057416268,210.9712918660287 156.7464114832536,188.94258373205744 246,188 C 335.2535885167464,187.05741626794256 435.38755980861254,207.20095693779902 548,230 C 660.6124401913875,252.79904306220098 785.7033492822967,278.25358851674645 883,271 C 980.2966507177033,263.74641148325355 1049.799043062201,223.78468899521528 1138,212 C 1226.200956937799,200.21531100478472 1333.1004784688994,216.60765550239236 1440,233 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-1"></path></svg>
+    </div>
+</body>
+</html>
