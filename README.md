@@ -41,24 +41,29 @@ StockPulse is a Flask-based web application that predicts stock prices and perfo
    ```bash
    git clone https://github.com/ASWIN-SRAj/StockPulse.git
    cd StockPulse
+---
 🚀 Usage
-Enter the stock name you want to analyze.
 
-View the scraped news headlines and sentiment analysis on the first result page.
+-📊 Add interactive charts for visualizing predictions and sentiment analysis.
 
-Navigate through separate result pages to view daily stock price predictions.
+-📈 Improve prediction model accuracy.
 
-Interact with charts (to be added) for better insights.
+-🌐 Enhance user interface and responsiveness.
 
+-🔒 Implement user authentication for personal tracking.
+
+---
 🔮 Future Work
-📊 Add interactive charts for visualizing predictions and sentiment analysis.
 
-📈 Improve prediction model accuracy.
+-📊 Add interactive charts for visualizing predictions and sentiment analysis.
 
-🌐 Enhance user interface and responsiveness.
+-📈 Improve prediction model accuracy.
 
-🔒 Implement user authentication for personal tracking.
+-🌐 Enhance user interface and responsiveness.
 
+-🔒 Implement user authentication for personal tracking.
+
+---
 🤝 Contributing
 Contributions, issues, and feature requests are welcome! Feel free to open an issue or create a pull request.
 
